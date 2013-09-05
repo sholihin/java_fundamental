@@ -1,0 +1,48 @@
+Latihan Praktikum
+
+1. Instalasi Java
+   Install jdk
+
+2. Setting Path
+   - Klik Kanan My Computer > Properties
+     > Advanced > Environment Variable
+
+   - Klik PATH di panel bawah
+   - Edit valuenya, tambahkan path <jdk>/bin
+     Contoh :
+     ;C:\Program Files\Java\jdk\bin
+
+   - Test instalasi, buka Command Prompt
+     Ketik javac <Enter>
+
+3. Hello World
+   - Ketik kode program Halo.java
+   https://github.com/endymuhardin/materi-kuliah-java-fundamental-2011/
+   dalam folder
+   sample-code/sesi-01/batch-01/src
+
+4. Compile
+   javac Halo.java
+   javac -d ../bin Halo.java sesi1/LatihanPackage.java
+
+5. Run
+   java Halo
+   java -cp ../bin Halo
+   java -cp ../bin sesi1.LatihanPackage
+
+6. Setting Classpath
+   - set environment variable
+     set CLASSPATH=C:\hasil-compile;d:\latihan (Windows)
+     export CLASSPATH=/home/endy/tmp:/opt/latihan (Linux)
+
+   - menggunakan opsi -cp
+     Windows :
+     java -cp C:\hasil-compile;d:\latihan sesi1.LatihanPackage
+
+     Linux
+     java -cp /home/endy/tmp:/opt/latihan sesi1.LatihanPackage
+
+
+7. Javadoc
+   javadoc -d ../docs Halo.java sesi1/LatihanPackage.java
+

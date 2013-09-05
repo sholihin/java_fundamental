@@ -1,0 +1,138 @@
+Latihan Praktikum 1
+
+http://172.20.22.26/praktikum/
+http://endy.artivisi.com/blog/aplikasi/instalasi-git-di-windows
+
+1. Instalasi Git
+   Screen Select Component
+   - Windows Explorer integration
+     Pilih Context menu entries
+
+2. Instalasi TortoiseGit
+   Setelah instalasi TortoiseGit, restart komputer
+
+3. Membuat repository local
+   - Buat folder kosong di flashdisk
+     nama folder : kuliah-pemrograman-1
+   - Klik kanan di folder kosong, Create Repository here
+     Opsi bare *jangan* dipilih
+   - Akan terbentuk folder .git dalam folder kuliah-pemrograman-1
+     Kalau tidak terlihat, edit setting Window Explorer
+     View > Folder Options > Show hidden files
+
+4. Setting username dan email
+   Klik kanan > Tortoise > Settings
+   Klik Config
+   Isi username dan email
+
+5. Menambah file ke repository
+   - buat file text dengan notepad
+   - isi beberapa baris
+   - Klik kanan file, Commit -> master
+   - Isi keterangan, misalnya : versi pertama
+   - Centang file
+   - Klik OK
+   - Pesan sukses
+   - Klik Close
+
+6. Mengedit file dan menyimpan perubahan ke repository
+   - edit file yang telah dibuat pada langkah sebelumnya
+   - Klik kanan file, Commit -> master
+   - Isi keterangan, misalnya : tambahan baris kedua
+   - Centang file
+   - Klik Ok
+   - Pesan sukses
+   - Klik Close
+
+7. Ulangi langkah ke-6 beberapa kali
+
+8. Melihat history perubahan
+   - Klik kanan di dalam folder
+   - TortoiseGit > Show log
+   - Semua perubahan yang dilakukan pada langkah 6 dan 7 akan tampil
+
+9. Kembali ke masa lalu
+   - Klik kanan di dalam folder
+   - TortoiseGit > Show log
+   - Pilih commit yang terdahulu (misal: commit no 2 dari bawah)
+   - Klik kanan > Switch/Checkout to this
+   - Option jangan ada yang dicentang
+   - Ok
+   - Buka lagi filenya, seharusnya isinya kembali ke versi tersebut
+
+10. Kembali ke masa kini
+    - klik kanan di dalam folder
+    - Tortoise > Switch/Checkout
+    - Ganti no branch menjadi master
+    - Klik Ok
+    - Buka lagi filenya, seharusnya isinya kembali ke versi terbaru
+
+Paralel Development
+
+11. Buat branch bugfix
+    Tortoise > Create Branch
+    Nama Branch : bugfix
+    Based on : HEAD (master)
+
+12. Melihat branch yang sedang aktif
+    Klik kanan, lihat (jangan klik) Commit -> master
+    master adalah branch aktif
+
+13. Pindah ke branch bugfix
+    - Tortoise > Switch/Checkout
+    - Branch : pilih bugfix
+    - Cek branch yang sedang aktif seperti langkah 12
+      Harusnya tulisannya Commit -> bugfix
+
+14. Tambah beberapa baris baru ke branch master
+15. Edit baris yang sudah ada di branch bugfix
+16. Show log untuk melihat posisi branch
+    Centang All Branches
+
+17. Merge bugfix (branch asal = bugfix)
+    ke dalam master (branch tujuan = master)
+    - pindah ke branch tujuan
+    - Tortoise > Merge
+    - Pilih branch asal (From Branch diganti jadi bugfix)
+    - Klik ok
+    - Lihat pesannya : successful atau conflict
+    - Klik close (jangan abort)
+
+18. Successful terjadi bila dua file yang digabung
+    diedit di baris yang berbeda
+
+19. Conflict terjadi bila file diedit di tempat yang sama
+    Conflict marker
+    <<<<<<< versi A
+    isi file di versi A
+    ======
+    isi file di versi B
+    >>>>>>> versi B
+
+    Resolve conflict
+    - edit baris yang conflict sesuai keinginan
+    - hapus conflict marker
+    - Resolve kemudian commit
+
+20. Registrasi di github
+    - buat username
+    - buat repository baru
+      New Repository
+      Nama Repository : latihan-git
+      Klik Create
+    - Copy Repository URL (klik dulu button HTTP)
+
+21. Daftarkan url repository github di repository local
+    Tortoise > Setting > Remote
+    Remote : Github
+    URL : Paste URL yang sudah dicopy di langkah sebelumnya
+    Klik OK
+
+22. Upload repo local ke Github
+    Klik Kanan > Git Sync
+    Local Branch : Master
+    Remote Branch : dikosongkan
+    Remote URL : pilih Github dari Dropdown
+    Klik Push
+    Refresh website github
+
